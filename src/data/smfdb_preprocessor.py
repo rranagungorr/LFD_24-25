@@ -3,7 +3,7 @@ import numpy as np
 from scipy.stats import zscore
 
 # SMFDB dosyasını yükleme
-file_path = r"C:\Users\PC\Documents\GitHub\LFD_24-25\data\raw\smfdb.csv"
+file_path = r"C:\Users\alpce\OneDrive\Belgeler\GitHub\LFD_24-25\data\raw\smfdb.csv"
 data = pd.read_csv(file_path)
 
 # Sayısal sütunları seç
@@ -75,7 +75,7 @@ def check_infinity(dataframe):
 
 # Fonksiyonun Kullanımı:
 # DataFrame'inizi yükleyin
-file_path = r"C:\Users\PC\Documents\GitHub\LFD_24-25\data\raw\smfdb.csv"
+file_path = r"C:\Users\alpce\OneDrive\Belgeler\GitHub\LFD_24-25\data\raw\smfdb.csv"
 data = pd.read_csv(file_path)
 
 # Dolar ve Euro sütunlarını float türüne dönüştür
@@ -144,7 +144,7 @@ def handle_infinity_values(dataframe, columns):
 
 
 # Veri setini yükleyin
-file_path = r"C:\Users\PC\Documents\GitHub\LFD_24-25\data\raw\smfdb.csv"
+file_path = r"C:\Users\alpce\OneDrive\Belgeler\GitHub\LFD_24-25\data\raw\smfdb.csv"
 data = pd.read_csv(file_path)
 
 # Fonksiyonu çağır
@@ -155,12 +155,13 @@ data = handle_infinity_values(data, columns_to_fix)
 print(data[(data['Dolar'] == float('inf')) | (data['Euro'] == float('inf'))])
 
 # Temizlenmiş veriyi kaydedin
-output_path = r"C:\Users\PC\Documents\GitHub\LFD_24-25\data\processed\cleaned_smfdb.csv"
+output_path = r"C:\Users\alpce\OneDrive\Belgeler\GitHub\LFD_24-25\data\processed\cleaned_smfdb.csv"
 data.to_csv(output_path, index=False)
-print(f"Temizlenmiş veri başarıyla kaydedildi: PC\Documents\GitHub\LFD_24-25\data\processed\cleaned_smfdb.csv")
+print(r"Temizlenmiş veri başarıyla kaydedildi: C:\Users\alpce\OneDrive\Belgeler\GitHub\LFD_24-25\data\processed\cleaned_smfdb_fixed.csv")
+
 
 # Temizlenmiş dosya yolunu girin
-cleaned_file_path = r"C:\Users\PC\Documents\GitHub\LFD_24-25\data\processed\cleaned_smfdb.csv"
+cleaned_file_path = r"C:\Users\alpce\OneDrive\Belgeler\GitHub\LFD_24-25\data\processed\cleaned_smfdb.csv"
 
 # Dosyayı yükle
 cleaned_data = pd.read_csv(cleaned_file_path)
@@ -169,7 +170,7 @@ cleaned_data = pd.read_csv(cleaned_file_path)
 import pandas as pd
 
 # SMFDB dosyasını yükleme
-file_path = r"C:\Users\PC\Documents\GitHub\LFD_24-25\data\raw\smfdb.csv"
+file_path = r"C:\Users\alpce\OneDrive\Belgeler\GitHub\LFD_24-25\data\raw\smfdb.csv"
 data = pd.read_csv(file_path)
 
 # Infinity değerlerin bir önceki satırın değeriyle doldurulması
@@ -207,14 +208,14 @@ print("Infinity değerlerden sonra düzeltme yapılmış satırlar:")
 print(data[(data['Dolar'] == float('inf')) | (data['Euro'] == float('inf'))])
 
 # Düzeltmeleri içeren dosyayı kaydet
-output_path = r"C:\Users\PC\Documents\GitHub\LFD_24-25\data\processed\cleaned_smfdb_fixed.csv"
+output_path = r"C:\Users\alpce\OneDrive\Belgeler\GitHub\LFD_24-25\data\processed\cleaned_smfdb_fixed.csv"
 data.to_csv(output_path, index=False)
 print(f"Temizlenmiş ve düzeltmeler yapılmış veri başarıyla kaydedildi: {output_path}")
 
 import pandas as pd
 
 # Temizlenmiş dosyanın yolunu girin
-cleaned_file_path_fixed = r"C:\Users\PC\Documents\GitHub\LFD_24-25\data\processed\cleaned_smfdb_fixed.csv"
+cleaned_file_path_fixed = r"C:\Users\alpce\OneDrive\Belgeler\GitHub\LFD_24-25\data\processed\cleaned_smfdb_fixed.csv"
 cleaned_data_fixed = pd.read_csv(cleaned_file_path_fixed)
 
 # Infinity kontrol fonksiyonu
