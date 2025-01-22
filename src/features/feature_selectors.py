@@ -40,7 +40,6 @@ def mrmr_selection(data, target_variable, k, ignore_columns):
 
 
 
-
 if __name__ == "__main__":
     # Yeni veri setini yükle
     data_path = r"C:\Users\PC\Documents\GitHub\LFD_24-25\data\processed\new_smf_weather_data.csv"
@@ -56,16 +55,16 @@ if __name__ == "__main__":
     # mRMR seçimi
     selected_features = mrmr_selection(data, target_variable, num_features_to_select, ignore_columns)
 
-    # Seçilen özellikleri hedef değişkenle birleştir
-    updated_data = data[selected_features + [target_variable]]
+    # Tarih sütununu seçilen sütunların başına ekle
+    updated_data = data[["Tarih"] + selected_features + [target_variable]]
 
     # Güncellenmiş veri setini kaydet
     updated_data_path = r"C:\Users\PC\Documents\GitHub\LFD_24-25\data\processed\final_feature_selection.csv"
     updated_data.to_csv(updated_data_path, index=False)
 
-
     print("Göz ardı edilen sütunlar:", ignore_columns)
     print("Seçilen Özellikler:")
     print(selected_features)
     print(f"Güncellenmiş veri seti '{updated_data_path}' konumuna kaydedildi.")
+
 
